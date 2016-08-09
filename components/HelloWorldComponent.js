@@ -13,12 +13,7 @@ var HelloWorldComponent = React.createClass({
         this.setState({data: "linfeiyang"});
     },
     render: function(){
-        return (<h1 onClick={this.click}>Hello, world~ {this.state.data}{this.i}</h1>);
-    },
-    click: function() {
-        console.log("click");
-        this.i++;
-        this.setState({data: "linfeiyang"});
+        return (<h1 onClick={this.props.click}>Hello, world~ {this.state.data}{this.i}</h1>);
     }
 });
 
