@@ -18,6 +18,7 @@ var HelloWorldComponent = React.createClass({
     click: function() {
         console.log("click");
         this.i++;
+        this.setState({data: "linfeiyang"});
     }
 });
 
