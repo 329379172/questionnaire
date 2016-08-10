@@ -13,11 +13,11 @@ var GroupSelectComponent = React.createClass({
     },
     render: function(){
         var data = this.state.data;
-        return (<select>
+        return (<div>
             {data.map((item) => {
-                return <option key={item.value} value={item.value}>{item.name}</option>
+                return <span key={item.value}><input type="radio" name="groupSelect"  value={item.value}/>{item.name}</span>
             })}
-        </select>);
+        </div>);
     }
 
 });
