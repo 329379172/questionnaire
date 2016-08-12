@@ -2,6 +2,7 @@
  * Created by linfeiyang on 16-8-5.
  */
 var React = require('react');
+var connect = require('react-redux').connect;
 var HelloWorldComponent = React.createClass({
     displayName: 'HelloWorldComponent',
     getInitialState: function() {
@@ -13,8 +14,16 @@ var HelloWorldComponent = React.createClass({
         this.setState({data: "linfeiyang"});
     },
     render: function(){
-        return (<h1 onClick={this.props.click}>Hello, world~ {this.state.data}{this.i}</h1>);
+        console.log(this.props);
+        const {dispatch} = this.props;
+        console.log(dispatch);
+        return (<h1 onClick={text => dispatch({ type: 'INCREMENT', count: 2 })}>Hello, world~ {this.state.data}{this.i}</h1>);
     }
 });
 
-module.exports = HelloWorldComponent;
+var select = (state)=> {
+    return {
+    };
+};
+
+module.exports = connect(select)(HelloWorldComponent);

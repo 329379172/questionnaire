@@ -5,10 +5,17 @@ var React = require('react');
 var ReactDom = require('react-dom');
 var Hello = require('../../components/HelloWorldComponent');
 var GroupSelect = require('../../components/GroupSelectComponent');
+var store = require('./store/main');
+var Provider = require('react-redux').Provider;
+
 
 
 function start() {
-    ReactDom.render(<Hello i="1" name="hello" click={renderGroupSelect}/>, document.getElementById('example'));
+    ReactDom.render(
+        <Provider store={store}>
+            <Hello i="1" name="hello" click={renderGroupSelect}/>
+        </Provider>,
+        document.getElementById('example'));
 }
 
 
